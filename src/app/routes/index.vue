@@ -2,11 +2,11 @@
 import { HomePage } from '@/pages/home'
 
 useHead({
-  title: 'Главная страница',
+  title: 'App Note on Nuxt',
   meta: [
-    { name: 'description', content: 'Главная страница' },
-    { property: 'og:title', content: 'Главная страница' },
-    { property: 'og:description', content: 'Главная страница' },
+    { name: 'description', content: 'App Note on Nuxt' },
+    { property: 'og:title', content: 'App Note on Nuxt' },
+    { property: 'og:description', content: 'App Note on Nuxt' },
   ],
 })
 </script>
