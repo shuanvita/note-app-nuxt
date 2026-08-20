@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      htmlAttrs: { lang: 'en' },
+      htmlAttrs: { lang: 'ru' },
       title: 'Note App on Nuxt',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@pinia/nuxt',
     'nuxt-svgo',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
   ],
 
   srcDir: './src',

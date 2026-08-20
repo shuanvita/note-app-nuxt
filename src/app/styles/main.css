@@ -5,18 +5,18 @@
   --font-mono: 'JetBrains Mono', monospace;
   --default-font-size: 14px;
   --default-line-height: 1.5;
-  --color-foreground: #BBCABF;
-  --color-primary: #10B981;
-  --color-primary-bright: #34D399;
+  --color-foreground: #bbcabf;
+  --color-primary: #10b981;
+  --color-primary-bright: #34d399;
   --color-surface: #0b1325;
   --color-surface-container: #171f32;
   --color-surface-bright: #31394c;
   --color-error: #ffb4ab;
-  --color-secondary: #1A2438;
-  --color-tertiary: #FC7C78;
-  --color-neutral: #0F1729;
-  --color-stroke: #3C4A42;
-  --color-button: #00422B;
+  --color-secondary: #1a2438;
+  --color-tertiary: #fc7c78;
+  --color-neutral: #0f1729;
+  --color-stroke: #3c4a42;
+  --color-button: #00422b;
 }
 
 @layer base {
@@ -30,5 +30,5 @@
 }
 
 .container {
-  @apply max-w-360 mx-auto px-4 xl:px-8;
+  @apply mx-auto max-w-360 px-4 xl:px-8;
 }

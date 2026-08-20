@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HomePage } from '@/pages/home';
+import { HomePage } from '@/pages/home'
 
 useHead({
   title: 'Главная страница',
@@ -8,7 +8,7 @@ useHead({
     { property: 'og:title', content: 'Главная страница' },
     { property: 'og:description', content: 'Главная страница' },
   ],
-});
+})
 </script>
 
 <template>
