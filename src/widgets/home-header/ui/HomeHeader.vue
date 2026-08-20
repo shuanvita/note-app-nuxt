@@ -13,7 +13,7 @@
         <template #preIcon>
           <IconPlus class="h-4 w-4 text-white" />
         </template>
-        New Note
+        Новая заметка
       </UiButton>
     </div>
   </header>

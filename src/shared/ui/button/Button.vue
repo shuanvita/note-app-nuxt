@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    variant?: 'primary' | 'secondary' | 'danger'
+    variant?: 'primary' | 'secondary' | 'danger' | 'custom'
     type?: 'button' | 'submit' | 'reset'
     disabled?: boolean
   }>(),
@@ -18,13 +18,14 @@ const variants = {
   primary: 'bg-primary hover:bg-primary-hover text-white',
   secondary: 'border border-stroke text-foreground-muted hover:bg-secondary-hover',
   danger: 'bg-danger hover:bg-danger-hover text-white',
+  custom: '',
 }
 </script>
 
 <template>
   <button
     :class="[
-      'inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded-md px-3 font-medium',
+      'group inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded-md px-3 font-medium',
       variants[variant],
     ]"
     :type="type"
