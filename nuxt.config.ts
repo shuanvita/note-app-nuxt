@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     layouts: 'app/layouts',
   },
 
-  components: [{ path: '~/shared/ui', prefix: 'ui', extensions: ['vue'] }],
+  components: [{ path: './shared/ui', prefix: 'ui', extensions: ['vue'] }],
 
   css: ['~/app/styles/main.css'],
 
@@ -47,8 +47,8 @@ export default defineNuxtConfig({
 
   svgo: {
     defaultImport: 'component',
-    componentPrefix: 'svg',
-    autoImportPath: './shared/ui/svg',
+    componentPrefix: 'icon',
+    autoImportPath: './shared/icons',
   },
 
   image: {

@@ -2,21 +2,19 @@
 
 @theme {
   --font-sans: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --default-font-size: 14px;
+  --default-font-size: 16px;
   --default-line-height: 1.5;
-  --color-foreground: #bbcabf;
-  --color-primary: #10b981;
-  --color-primary-bright: #34d399;
-  --color-surface: #0b1325;
-  --color-surface-container: #171f32;
-  --color-surface-bright: #31394c;
-  --color-error: #ffb4ab;
-  --color-secondary: #1a2438;
-  --color-tertiary: #fc7c78;
-  --color-neutral: #0f1729;
-  --color-stroke: #3c4a42;
-  --color-button: #00422b;
+  --color-background: #f3f3f3;
+  --color-foreground: #111827;
+  --color-foreground-muted: #1F2937;
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-secondary: #F3F4F6;
+  --color-secondary-hover: #E5E7EB;
+  --color-danger: #EF4444;
+  --color-danger-hover: #DC2626;
+  --color-stroke: #6366F1;
+  --color-ring: #E5E7EB;
 }
 
 @layer base {
@@ -25,7 +23,7 @@
     font-optical-sizing: auto;
     line-height: var(--default-line-height);
     color: var(--color-foreground);
-    background-color: var(--color-neutral);
+    background-color: var(--color-background);
   }
 }
 
