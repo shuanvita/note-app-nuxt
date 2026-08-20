@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Modal } from '~/shared/ui/modal'
+
+const isOpenModal = ref(false)
+</script>
 
 <template>
   <div class="flex flex-col items-center justify-center space-y-5">
@@ -9,11 +13,12 @@
       <div class="text-2xl">Пока нет заметок</div>
       <div>Создайте свою первую заметку, чтобы начать.</div>
     </div>
-    <UiButton>
+    <UiButton @click="isOpenModal = true">
       <template #preIcon>
         <IconPlus class="h-4 w-4 text-white" />
       </template>
       Создать заметку
     </UiButton>
   </div>
+  <Modal v-model="isOpenModal">Модальное окно</Modal>
 </template>

@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Modal } from '~/shared/ui/modal'
+
+const isOpenModal = ref(false)
+</script>
 
 <template>
   <header class="border-stroke border-b py-4">
@@ -9,7 +13,7 @@
         </div>
         <span class="text-lg font-bold">App Note on Nuxt</span>
       </div>
-      <UiButton>
+      <UiButton @click="isOpenModal = true">
         <template #preIcon>
           <IconPlus class="h-4 w-4 text-white" />
         </template>
@@ -17,6 +21,7 @@
       </UiButton>
     </div>
   </header>
+  <Modal v-model="isOpenModal">Модальное окно</Modal>
 </template>
 
 <style scoped></style>
