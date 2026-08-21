@@ -2,11 +2,27 @@
 import type { Note } from '~/entities/note'
 import { NoteForm, useNotesStore } from '~/entities/note'
 
+interface NoteFormData {
+  title: string
+  todo: {
+    text: string
+    isComplete: boolean
+  }
+}
+
 const store = useNotesStore()
 const isOpenModal = defineModel<boolean>({ required: true })
 
-function onSubmit(data: Pick<Note, 'title' | 'todo'>) {
-  store.addNote({ id: crypto.randomUUID(), ...data })
+function onSubmit(data: NoteFormData) {
+  const todo = {
+    id: crypto.randomUUID(),
+    ...data.todo,
+  }
+  store.addNote({
+    id: crypto.randomUUID(),
+    title: data.title,
+    todo: [todo],
+  })
   isOpenModal.value = false
 }
 </script>

@@ -1,5 +1,5 @@
 import { defineStore, skipHydrate } from 'pinia'
-import { useStorage, debounceFilter } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
 import type { Note } from '~/entities/note'
 
 export const useNotesStore = defineStore('useNotes', () => {

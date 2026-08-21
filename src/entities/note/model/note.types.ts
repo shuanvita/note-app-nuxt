@@ -6,6 +6,14 @@ export interface Note {
 
 export interface NoteTodo {
   id: string
-  title: string
+  text: string
   isComplete: boolean
+}
+
+export interface NoteFormData {
+  title: string
+  todo: {
+    text: string
+    isComplete: boolean
+  }
 }
