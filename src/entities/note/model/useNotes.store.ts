@@ -1,8 +1,9 @@
-import { defineStore } from 'pinia'
+import { defineStore, skipHydrate } from 'pinia'
+import { useStorage, debounceFilter } from '@vueuse/core'
 import type { Note } from '~/entities/note'
 
 export const useNotesStore = defineStore('useNotes', () => {
-  const notes = ref<Note[]>([])
+  const notes = useStorage<Note[]>('notes-app:notes', [])
 
   const addNote = (note: Note) => {
     notes.value.push(note)
@@ -12,5 +13,10 @@ export const useNotesStore = defineStore('useNotes', () => {
     notes.value = notes.value.filter((note) => note.id !== id)
   }
 
-  return { notes, addNote, removeNote }
+  function updateNote(id: string, patch: Partial<Note>) {
+    const note = notes.value.find((note) => note.id === id)
+    if (note) Object.assign(note, patch)
+  }
+
+  return { notes: skipHydrate(notes), addNote, removeNote, updateNote }
 })

@@ -6,7 +6,7 @@ const isOpenModal = ref(false)
 
 <template>
   <header class="border-stroke border-b py-4">
-    <div class="container flex flex-wrap items-center justify-between gap-3">
+    <NuxtLink to="/" class="container flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-2">
         <div class="bg-primary rounded-md p-2">
           <IconNote class="h-4 w-4 text-white" />
@@ -19,7 +19,7 @@ const isOpenModal = ref(false)
         </template>
         Новая заметка
       </UiButton>
-    </div>
+    </NuxtLink>
   </header>
   <AddNoteModal v-model="isOpenModal" />
 </template>

@@ -12,17 +12,19 @@ function onDeleteNote(id: string) {
 </script>
 
 <template>
-  <NotesEmpty v-if="!notes.length" />
-  <div class="grid grid-cols-3 gap-6" v-else>
-    <CardNote
-      v-for="(note, index) in notes"
-      :id="note.id"
-      :key="note.id"
-      :title="note.title"
-      :todo="note.todo"
-      @delete-note="onDeleteNote"
-    />
-  </div>
+  <ClientOnly>
+    <NotesEmpty v-if="!notes.length" />
+    <div class="grid grid-cols-3 gap-6" v-else>
+      <CardNote
+        v-for="(note, index) in notes"
+        :id="note.id"
+        :key="note.id"
+        :title="note.title"
+        :todo="note.todo"
+        @delete-note="onDeleteNote"
+      />
+    </div>
+  </ClientOnly>
 </template>
 
 <style scoped></style>
