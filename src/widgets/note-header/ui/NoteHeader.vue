@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import { AddNoteModal } from '~/features/note/add'
-
-const isOpenModal = ref(false)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="border-stroke border-b py-4">
@@ -15,15 +11,9 @@ const isOpenModal = ref(false)
           <span class="text-lg font-bold">App Note on Nuxt</span>
         </div>
       </NuxtLink>
-      <UiButton @click="isOpenModal = true">
-        <template #preIcon>
-          <IconPlus class="h-4 w-4 text-white" />
-        </template>
-        Новая заметка
-      </UiButton>
+      <UiButton> Сохранить заметку </UiButton>
     </div>
   </header>
-  <AddNoteModal v-model="isOpenModal" />
 </template>
 
 <style scoped></style>
