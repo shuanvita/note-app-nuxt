@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { AddNoteModal } from '~/features/add-note'
+
 const isOpenModal = ref(false)
 </script>
 
@@ -19,7 +21,7 @@ const isOpenModal = ref(false)
       </UiButton>
     </div>
   </header>
-  <UiModal v-model="isOpenModal">Модальное окно</UiModal>
+  <AddNoteModal v-model="isOpenModal" />
 </template>
 
 <style scoped></style>
