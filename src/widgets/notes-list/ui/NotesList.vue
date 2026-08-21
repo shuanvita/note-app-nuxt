@@ -1,8 +1,14 @@
 <script setup lang="ts">
-import { CardNote, useNotesStore } from '~/entities/note'
+import { CardNote, type Note, useNotesStore } from '~/entities/note'
 import { NotesEmpty } from '~/widgets/notes-list'
 
 const { notes } = storeToRefs(useNotesStore())
+
+const store = useNotesStore()
+
+function onDeleteNote(id: string) {
+  store.removeNote(id)
+}
 </script>
 
 <template>
@@ -14,6 +20,7 @@ const { notes } = storeToRefs(useNotesStore())
       :key="note.id"
       :title="note.title"
       :todo="note.todo"
+      @delete-note="onDeleteNote"
     />
   </div>
 </template>

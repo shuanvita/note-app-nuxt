@@ -2,6 +2,10 @@
 import type { Note } from '~/entities/note'
 
 defineProps<Note>()
+
+const emit = defineEmits<{
+  'delete-note': [id: string]
+}>()
 </script>
 
 <template>
@@ -14,7 +18,7 @@ defineProps<Note>()
             <IconEdit class="group-hover:text-primary-hover h-4 w-4" />
           </template>
         </UiButton>
-        <UiButton variant="custom">
+        <UiButton variant="custom" @click="emit('delete-note', id)">
           <template #icon>
             <IconDelete class="group-hover:text-danger-hover h-4 w-4" />
           </template>
