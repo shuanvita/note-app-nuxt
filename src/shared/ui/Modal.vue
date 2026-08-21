@@ -9,6 +9,10 @@ const props = withDefaults(defineProps<ModalProps>(), { size: 'md' })
 
 const isOpen = defineModel<boolean>({ required: true })
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const closeOnOverlayClick = () => {
   isOpen.value = false
 }
@@ -40,6 +44,7 @@ const modalSizeClass = computed(() => sizeClasses[props.size])
             'flex w-full min-w-75 flex-col space-y-4 bg-white p-6 shadow-lg',
             modalSizeClass,
           ]"
+          v-bind="$attrs"
           @click.stop
         >
           <button

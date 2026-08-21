@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NoteForm } from '~/entities/note'
+import { AddNoteModal } from '~/features/note/add'
 
 const isOpenModal = ref(false)
 </script>
@@ -20,7 +20,5 @@ const isOpenModal = ref(false)
       Создать заметку
     </UiButton>
   </div>
-  <UiModal v-model="isOpenModal">
-    <NoteForm />
-  </UiModal>
+  <AddNoteModal v-model="isOpenModal" />
 </template>
