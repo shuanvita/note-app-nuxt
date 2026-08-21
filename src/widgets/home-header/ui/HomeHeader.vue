@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AddNoteModal } from '~/features/add-note'
+import { AddNoteModal } from '~/features/note/add'
 
 const isOpenModal = ref(false)
 </script>

@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { CardNote, type Note, useNotesStore } from '~/entities/note'
-import { NotesEmpty } from '~/widgets/notes-list'
+import { CardNote, useNotesStore } from '~/entities/note'
+import NotesEmpty from './NotesEmpty.vue'
+import { DeleteNoteModal } from '~/features/note/delete'
 
 const { notes } = storeToRefs(useNotesStore())
 
-const store = useNotesStore()
+const isDeleteModalOpen = ref(false)
+const noteIdToDelete = ref<string | null>(null)
 
 function onDeleteNote(id: string) {
-  store.removeNote(id)
+  noteIdToDelete.value = id
+  isDeleteModalOpen.value = true
 }
 </script>
 
@@ -16,7 +19,7 @@ function onDeleteNote(id: string) {
     <NotesEmpty v-if="!notes.length" />
     <div class="grid grid-cols-3 gap-6" v-else>
       <CardNote
-        v-for="(note, index) in notes"
+        v-for="note in notes"
         :id="note.id"
         :key="note.id"
         :title="note.title"
@@ -24,6 +27,8 @@ function onDeleteNote(id: string) {
         @delete-note="onDeleteNote"
       />
     </div>
+
+    <DeleteNoteModal v-if="noteIdToDelete" v-model="isDeleteModalOpen" :note-id="noteIdToDelete" />
   </ClientOnly>
 </template>
 
