@@ -36,17 +36,20 @@ const modalSizeClass = computed(() => sizeClasses[props.size])
         @click="closeOnOverlayClick"
       >
         <div
-          :class="['relative w-full min-w-75 bg-white p-6 shadow-lg', modalSizeClass]"
+          :class="[
+            'flex w-full min-w-75 flex-col space-y-4 bg-white p-6 shadow-lg',
+            modalSizeClass,
+          ]"
           @click.stop
         >
-          <slot />
           <button
-            class="text-foreground-muted hover:text-foreground absolute top-6 right-6 cursor-pointer"
+            class="text-foreground-muted hover:text-foreground cursor-pointer self-end"
             type="button"
             @click="closeOnOverlayClick"
           >
             <IconCancel class="h-5 w-5" />
           </button>
+          <slot />
         </div>
       </div>
     </Transition>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Modal } from '~/shared/ui/modal'
+import { NoteForm } from '~/entities/note'
 
 const isOpenModal = ref(false)
 </script>
@@ -20,5 +20,7 @@ const isOpenModal = ref(false)
       Создать заметку
     </UiButton>
   </div>
-  <Modal v-model="isOpenModal">Модальное окно</Modal>
+  <UiModal v-model="isOpenModal">
+    <NoteForm />
+  </UiModal>
 </template>

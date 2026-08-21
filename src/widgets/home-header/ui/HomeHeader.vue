@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Modal } from '~/shared/ui/modal'
-
 const isOpenModal = ref(false)
 </script>
 
@@ -21,7 +19,7 @@ const isOpenModal = ref(false)
       </UiButton>
     </div>
   </header>
-  <Modal v-model="isOpenModal">Модальное окно</Modal>
+  <UiModal v-model="isOpenModal">Модальное окно</UiModal>
 </template>
 
 <style scoped></style>
