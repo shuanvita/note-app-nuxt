@@ -1,13 +1,30 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   isCompleted: boolean
   text: string
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   'delete-task': []
   'toggle-complete': []
+  'update-text': [value: string]
 }>()
+
+const isEditing = ref(false)
+const draftText = ref(props.text)
+
+function startEdit() {
+  draftText.value = props.text
+  isEditing.value = true
+}
+
+function saveEdit() {
+  const value = draftText.value.trim()
+  if (value && value !== props.text) {
+    emit('update-text', value)
+  }
+  isEditing.value = false
+}
 </script>
 
 <template>
@@ -17,9 +34,22 @@ defineEmits<{
       :modelValue="isCompleted"
       @update:modelValue="$emit('toggle-complete')"
     />
-    <span :class="['flex-1', { 'text-foreground-muted/50 line-through': isCompleted }]">{{
-      text
-    }}</span>
+
+    <UiInput
+      v-if="isEditing"
+      class="flex-1"
+      v-model="draftText"
+      @keyup.enter="saveEdit"
+      @blur="saveEdit"
+    />
+    <span
+      v-else
+      :class="['flex-1 cursor-text', { 'text-foreground-muted/50 line-through': isCompleted }]"
+      @click="startEdit"
+    >
+      {{ text }}
+    </span>
+
     <UiButton variant="custom" @click="$emit('delete-task')">
       <template #icon>
         <IconDelete class="text-foreground-muted hover:text-danger h-4 w-4" name="delete" />
