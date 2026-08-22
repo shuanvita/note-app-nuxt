@@ -21,8 +21,14 @@ function onSubmit(title: string) {
       Укажите заголовок заметки — список дел можно будет добавить позже, на странице редактирования.
     </p>
     <NoteForm @submit-form="onSubmit">
-      <template #submit-button>
-        <UiButton class="self-end" type="submit">Создать заметку</UiButton>
+      <template #submit-button="{ isDisabled }">
+        <UiButton
+          class="self-end disabled:cursor-not-allowed disabled:opacity-50"
+          type="submit"
+          :disabled="isDisabled"
+        >
+          Создать заметку
+        </UiButton>
       </template>
     </NoteForm>
   </UiModal>

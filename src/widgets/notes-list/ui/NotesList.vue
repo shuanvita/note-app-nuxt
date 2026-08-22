@@ -17,7 +17,7 @@ function onDeleteNote(id: string) {
 <template>
   <ClientOnly>
     <NotesEmpty v-if="!notes.length" />
-    <div class="grid grid-cols-3 gap-6" v-else>
+    <div class="grid gap-6 lg:grid-cols-3" v-else>
       <CardNote
         v-for="note in notes"
         :id="note.id"
@@ -27,7 +27,6 @@ function onDeleteNote(id: string) {
         @delete-note="onDeleteNote"
       />
     </div>
-
     <DeleteNoteModal v-if="noteIdToDelete" v-model="isDeleteModalOpen" :note-id="noteIdToDelete" />
   </ClientOnly>
 </template>
