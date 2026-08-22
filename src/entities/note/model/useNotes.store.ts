@@ -9,11 +9,11 @@ export const useNotesStore = defineStore('useNotes', () => {
     notes.value.push(note)
   }
 
-  function removeNote(id: string) {
+  const removeNote = (id: string) => {
     notes.value = notes.value.filter((note) => note.id !== id)
   }
 
-  function updateNote(id: string, patch: Partial<Note>) {
+  const updateNote = (id: string, patch: Partial<Note>) => {
     const note = notes.value.find((note) => note.id === id)
     if (note) Object.assign(note, patch)
   }

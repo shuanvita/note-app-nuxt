@@ -9,11 +9,3 @@ export interface NoteTodo {
   text: string
   isComplete: boolean
 }
-
-export interface NoteFormData {
-  title: string
-  todo: {
-    text: string
-    isComplete: boolean
-  }
-}
