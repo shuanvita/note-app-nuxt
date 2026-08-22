@@ -25,5 +25,3 @@ const isOpenModal = ref(false)
   </header>
   <AddNoteModal v-model="isOpenModal" />
 </template>
-
-<style scoped></style>

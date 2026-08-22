@@ -49,5 +49,3 @@ watch(notes, () => {
     </ClientOnly>
   </header>
 </template>
-
-<style scoped></style>
